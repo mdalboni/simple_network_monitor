@@ -1,0 +1,4 @@
+speedtest-cli
+requests
+matplotlib
+numpy
