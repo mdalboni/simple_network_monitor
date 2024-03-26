@@ -1,7 +1,7 @@
 from threading import Thread
 from time import sleep
 
-from requests import get
+from security.safe_requests import get
 
 from monitors.base_monitor import BaseMonitor
 from monitors.utils import get_actual_time
