@@ -42,7 +42,7 @@ class ConnectionUptimeMonitor(BaseMonitor):
 
     def fetch_page(self) -> int:
         try:
-            response = get(self.url)
+            response = get(self.url, timeout=60)
             return int(response.elapsed.total_seconds())
         except:
             return -1
