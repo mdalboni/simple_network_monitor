@@ -2,3 +2,4 @@ speedtest-cli
 requests
 matplotlib
 numpy
+security==1.3.1
