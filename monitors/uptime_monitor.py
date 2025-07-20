@@ -1,10 +1,9 @@
 from threading import Thread
 from time import sleep
 
-from requests import get
-
 from monitors.base_monitor import BaseMonitor
 from monitors.utils import get_actual_time
+from security import safe_requests
 
 
 class ConnectionUptimeMonitor(BaseMonitor):
@@ -42,7 +41,7 @@ class ConnectionUptimeMonitor(BaseMonitor):
 
     def fetch_page(self) -> int:
         try:
-            response = get(self.url)
+            response = safe_requests.get(self.url)
             return int(response.elapsed.total_seconds())
         except:
             return -1
